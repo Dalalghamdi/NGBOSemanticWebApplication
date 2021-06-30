@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Search By Speciman{% endblock %}
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Display <b>More Information of Speciman</b></h2>
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>More Detail of Speciman</th>
+                    </tr>
+                    {% for row in data['results']['bindings'] %}
+                     <tr>
+                        <td>{{row['label']['value']}}</td>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                <!--Name , Institution, email, research summary, please indicate weather you are interested in specimen, data or both-->
+                EmailSent:
+                <form action="{{ url_for('EmailSent') }}" method="POST">
+                Name: <input type="text" name="name" id="name"><br>
+                Institution: <input type="text" name="institute" id="institute"><br>
+                Email: <input type="email" name="email" id="email"><br>
+                Research summary: <input type="text" name="summary" id="summary"><br>
+                please indicate weather you are interested in specimen, data or both? <input type="text" name="question" id="question"><br>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send</button>
+                </form>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+
