@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Search By Specimen{% endblock %}
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Display <b>More Information of Specimen</b></h2>
+
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>Blood Specimen</th>
+                        <th>Biobank</th>
+                        <th>LibraryPrepration</th>
+                        <th>LibraryPreprationProtocol</th>
+                        <th>LibraryPreprationKit</th>
+                        <th>Sequencingdevice</th>
+                        <th>AvailableSequencingData</th>
+                        <th>FileFormat</th>
+                    </tr>
+                    {% for row in data['results']['bindings'] %}
+                     <tr>
+                        <td>{{row['bloodspecimenlabel']['value']}}</td>
+                        <td>{{row['biobanklabel']['value']}}</td>
+                        <td>{{row['libraryPreprationlabel']['value']}}</td>
+                        <td>{{row['LibraryPreprationProtocollabel']['value']}}</td>
+                        <td>{{row['LibraryPreprationKitlabel']['value']}}</td>
+                        <td>{{row['Sequencingdevicelabel']['value']}}</td>
+                        <td>{{row['availableSequencingDatalabel']['value']}}</td>
+                        <td>{{row['FileFormatlabel']['value']}}</td>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+
+<!--                &lt;!&ndash;Name , Institution, email, research summary, please indicate weather you are interested in specimen, data or both&ndash;&gt;-->
+
+<!--                EmailSent:-->
+<!--                <form action="{{ url_for('EmailSent') }}" method="post">-->
+<!--                    <br>-->
+<!--                    <br>-->
+<!--                    <table>-->
+<!--                        <tr>-->
+<!--                        <td>Name:</td><td><input type="text" name="name" id="name"></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                        <td>Institution:</td><td><input type="text" name="institute" id="institute"></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                        <td>Email:</td><td><input type="email" name="email" id="email"></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                        <td>Research summary:</td><td><input type="text" name="summary" id="summary"></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                        <td>please indicate weather you are interested in specimen, data or both?</td><td><input type="text" name="question" id="question"></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                        <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Send</button></td><td>&nbsp;</td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </form>-->
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+

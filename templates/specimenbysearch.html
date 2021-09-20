@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Search By Specimen{% endblock %}
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Display <b>Specimen Details</b></h2>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('MoreInfoOfSpecimen') }}" >Filter by biobank </a>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('MoreInfoOfSpecimen') }}" >Filter by age range </a>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('MoreInfoOfSpecimen') }}" >Filter by target sequence specification </a>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('MoreInfoOfSpecimen') }}" >data availability </a>
+                <form action="{{ url_for('MoreInfoOfSpecimen') }}">
+                    <table class="table table-hover table-dark">
+                    <tr>
+                        <th>Specimen Name</th>
+                    </tr>
+                    {% for row in data['results']['bindings'] %}
+                     <tr>
+                        <td><input type="checkbox" name="chkbloodspecimen" value="{{row['label']['value']}}"></td>
+                        <td>{{row['label']['value']}}</td>
+                         <td>
+
+                             <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="View More"></input></td>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                    </form>
+                <br>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('RequestPage') }}" >Request specimens or datasets</a>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+

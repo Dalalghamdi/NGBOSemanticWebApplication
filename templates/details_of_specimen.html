@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Search By Specimen{% endblock %}
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>Display <b>Detail Relationship of Specimen</b></h2>
+
+                <table class="table table-hover table-dark">
+                    <tr>
+                        <th>Blood Specimen</th>
+                        <th>Biobank</th>
+                        <th>LibraryPrepration</th>
+                        <th>LibraryPreprationProtocol</th>
+                        <th>LibraryPreprationKit</th>
+                        <th>Sequencingdevice</th>
+                        <th>AvailableSequencingData</th>
+                        <th>FileFormat</th>
+                    </tr>
+                    {% for row in data['results']['bindings'] %}
+                     <tr>
+                        <td>{{row['bloodspecimenlabel']['value']}}</td>
+                        <td>{{row['biobanklabel']['value']}}</td>
+                        <td>{{row['libraryPreprationlabel']['value']}}</td>
+                        <td>{{row['LibraryPreprationProtocollabel']['value']}}</td>
+                        <td>{{row['LibraryPreprationKitlabel']['value']}}</td>
+                        <td>{{row['Sequencingdevicelabel']['value']}}</td>
+                        <td>{{row['availableSequencingDatalabel']['value']}}</td>
+                        <td>{{row['FileFormatlabel']['value']}}</td>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+

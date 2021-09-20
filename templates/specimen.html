@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Speciman{% endblock %}
+{% block title %}Specimen{% endblock %}
 {% include 'header.html' %}
 {% include 'menu.html' %}
 
@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col md-12">
             <div class="jumbotron p-3">
-                <h2>Display <b>Speciman Details</b></h2>
-                 <form class="form-inline my-2 my-lg-0" action="{{ url_for('SearchBySpeciman') }}">
-                <select name="speciman_name" class="form-select" aria-label="Default select example">
-                  <option selected>---SELECT SPECIMAN---</option>
+                <h2>Display <b>Specimen Details</b></h2>
+                 <form class="form-inline my-2 my-lg-0" action="{{ url_for('SearchBySpecimen') }}">
+                <select name="specimen_name" class="form-select" aria-label="Default select example">
+                  <option selected>---Select specimen---</option>
                     {% for row in data['results']['bindings'] %}
                   <option value="{{row['entity']['value']}}">{{row['label']['value']}}</option>
                   {% endfor %}

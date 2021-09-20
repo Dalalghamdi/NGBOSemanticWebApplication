@@ -8,29 +8,23 @@
 <div class="container">
      <div class="container-fluid">
                         <h1 class="mt-4">Dashboard</h1>
-
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 Welcome {{session['user']}}<br><br>
 
                                 <div class="card bg-primary text-white mb-4">
                                     {% for row in data['results']['bindings'] %}
-                                    <div class="card-body">Speciman: {{row['triple']['value']}}</div>
+                                    <div class="card-body">Specimen: {{row['triple']['value']}}</div>
                                        {% endfor %}
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url_for('Speciman') }}">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{ url_for('Specimen') }}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-
-
                             </div>
                         </div>
-
                     </div>
-
-
 </div>
 </div>
 
