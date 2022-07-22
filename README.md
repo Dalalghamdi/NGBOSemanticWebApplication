@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
+
 ## Semantic web application for organizing and federated querying of biobank data
 A web application for end-users with appropriate functions to import, query, and retrieve the data using the Apache Jena Java framework and SPARQL queries against RDF triples stored in a graph database.
 #
